@@ -17,6 +17,7 @@
             productsLoaded: function() {
                 // Make a copy of the loaded data
                 this.products = this.$.ajax.response.slice(0);
+                console.log('x-product-data: ' + this.products.length);
             }
         });
     </script>

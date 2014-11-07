@@ -1,11 +1,14 @@
 <link rel="import" href="x-product-data.html">
+<link rel="import" href="x-product.html">
+
+<!-- a simple example of a custom listing element. -->
 <polymer-element name="x-product-list">
     <template>
-        <x-product-data></x-product-data>
-        <h1>My List!</h1>
+        <x-product-data products="{{products}}"></x-product-data>
         <div layout vertical center>
-            <template>
-                <x-product></x-product>
+            <h1>My products!</h1>
+            <template repeat="{{product in products}}">
+                <x-product product="{{product}}"></x-product>
             </template>
         </div>
     </template>
