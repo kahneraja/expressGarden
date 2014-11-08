@@ -2,36 +2,43 @@
     {
         "id": 0,
         "name": "fugiat",
-        "description": "mollit"
+        "description": "mollit",
+        "cost": 23.64
     },
     {
         "id": 1,
         "name": "quis",
-        "description": "tempor nisi laborum Lorem ipsum tempor minim ipsum aliqua. ipsum sunt ipsum ad reprehenderit consectetur consequat. voluptate magna"
+        "description": "tempor nisi laborum Lorem ipsum tempor minim ipsum aliqua. ipsum sunt ipsum ad reprehenderit consectetur consequat. voluptate magna",
+        "cost": 3.64
     },
     {
         "id": 2,
         "name": "in",
-        "description": "ipsum in voluptate cupidatat magna est consequat. veniam, officia reprehenderit aliquip reprehenderit dolor occaecat nostrud dolor non"
+        "description": "ipsum in voluptate cupidatat magna est consequat. veniam, officia reprehenderit aliquip reprehenderit dolor occaecat nostrud dolor non",
+        "cost": 2.6
     },
     {
         "id": 3,
         "name": "ad",
-        "description": "enim esse qui ex adipisicing dolore ea laboris Excepteur deserunt velit in fugiat velit incididunt Lorem elit, exercitation labore cupidatat ullamco in"
+        "description": "enim esse qui ex adipisicing dolore ea laboris Excepteur deserunt velit in fugiat velit incididunt Lorem elit, exercitation labore cupidatat ullamco in",
+        "cost": 8
     },
     {
         "id": 4,
         "name": "sint",
-        "description": "esse et laboris sint sed magna minim et ex ullamco in"
+        "description": "esse et laboris sint sed magna minim et ex ullamco in",
+        "cost": 1424.64
     },
     {
         "id": 5,
         "name": "consectetur",
-        "description": "qui quis voluptate ut fugiat dolore enim veniam, laborum reprehenderit ut minim labore proident, sunt culpa Excepteur adipisicing magna deserunt et est labore"
+        "description": "qui quis voluptate ut fugiat dolore enim veniam, laborum reprehenderit ut minim labore proident, sunt culpa Excepteur adipisicing magna deserunt et est labore",
+        "cost": 4.64
     },
     {
         "id": 6,
         "name": "dolore",
-        "description": "reprehenderit mollit nulla reprehenderit consectetur fugiat sed velit eu fugiat sunt Duis quis dolor pariatur. ex deserunt aute sed officia cupidatat minim ut amet, et magna magna Excepteur"
+        "description": "reprehenderit mollit nulla reprehenderit consectetur fugiat sed velit eu fugiat sunt Duis quis dolor pariatur. ex deserunt aute sed officia cupidatat minim ut amet, et magna magna Excepteur",
+        "cost": 54
     }
 ]

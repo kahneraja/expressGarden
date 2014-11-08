@@ -1,0 +1,26 @@
+<link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+<script src="filter-money.js"></script>
+<!-- a simple example of a custom element with a custom attribute. -->
+<polymer-element name="x-product-summary" attributes="products">
+    <template>
+
+        <p>Total: {{ products | total() | money }}</p>
+
+    </template>
+    <script>
+        Polymer({
+            total: function (products) {
+                var total = _.chain(products)
+                        .map(function (p) {
+                            return p.cost;
+                        })
+                        .reduce(function (cost, total) {
+                            return cost + total;
+                        }, 0)
+                        .value();
+
+                return total;
+            }
+        });
+    </script>
+</polymer-element>

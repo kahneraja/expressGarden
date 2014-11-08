@@ -1,6 +1,7 @@
 <link rel="import" href="x-product-data.html">
+<link rel="import" href="x-product-summary.html">
 <link rel="import" href="x-product.html">
-
+<script src="filter-money.js"></script>
 <!-- a simple example of a custom listing element. -->
 <polymer-element name="x-product-list">
     <template>
@@ -9,6 +10,7 @@
                 products="{{products}}"></x-product-data>
         <div layout vertical>
             <h1>My products!</h1>
+            <x-product-summary products="{{products}}"></x-product-summary>
             <template repeat="{{product in products}}">
                 <x-product product="{{product}}" on-delete></x-product>
             </template>

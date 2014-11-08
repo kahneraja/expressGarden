@@ -1,4 +1,5 @@
 <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+<script src="filter-money.js"></script>
 <!-- a simple example of a custom element with a custom attribute. -->
 <polymer-element name="x-product" attributes="product">
     <template>
@@ -11,18 +12,22 @@
                 width: 100%;
                 font-size: 1.2rem;
                 font-weight: 300;
-                border-bottom:  1px solid lightgray;
+
             }
             div {
                 margin-bottom: 10px;
                 text-align: right;
+
+            }
+            .cost{
+                border-bottom:  1px solid lightgray;
             }
         </style>
         <h2>{{product.name}}</h2>
 
         <p>{{product.description}}</p>
-
-        <div id="actions">
+        <div class="cost">${{product.cost | money}}</div>
+        <div>
             <core-icon-button
                     icon="delete"
                     on-click="{{deleteProduct}}">
