@@ -1,3 +1,4 @@
+<script src="bower_components/underscore/underscore-min.js"></script>
 <link rel="import" href="bower_components/core-ajax/core-ajax.html">
 <polymer-element name="x-product-data" attributes="products">
     <template>
@@ -6,19 +7,25 @@
                 auto
                 url="products.json"
                 handleAs="json"
-                on-core-response="{{productsLoaded}}">
+                on-core-response="{{loaded}}">
                 </core-ajax>
     </template>
+
     <script>
         Polymer('x-product-data', {
             created: function() {
                 this.products = [];
             },
-            productsLoaded: function() {
+            loaded: function() {
                 // Make a copy of the loaded data
                 this.products = this.$.ajax.response.slice(0);
                 console.log('x-product-data: ' + this.products.length);
+            },
+            deleteProduct: function(id) {
+                // no service backend, just log the change
+                this.products = _.reject(this.products, function(p){ return p.id === id});
             }
         });
     </script>
+
 </polymer-element>

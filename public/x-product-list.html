@@ -4,16 +4,24 @@
 <!-- a simple example of a custom listing element. -->
 <polymer-element name="x-product-list">
     <template>
-        <x-product-data products="{{products}}"></x-product-data>
-        <div layout vertical center>
+        <x-product-data
+                id="products"
+                products="{{products}}"></x-product-data>
+        <div layout vertical>
             <h1>My products!</h1>
             <template repeat="{{product in products}}">
-                <x-product product="{{product}}"></x-product>
+                <x-product product="{{product}}" on-delete></x-product>
             </template>
         </div>
     </template>
     <script>
         Polymer({
+            ready: function() {
+                this.addEventListener('delete-product', this.deleteProduct);
+            },
+            deleteProduct: function(event) {
+                this.$.products.deleteProduct(event.detail.id);
+            }
         });
     </script>
 </polymer-element>
