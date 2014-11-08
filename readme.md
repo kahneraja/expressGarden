@@ -16,3 +16,5 @@ This application is a simple polymer application that lists products.
 - provides a 'delete' feature'.
 
 frameworks: polymer, underscorejs.
+
+tools: nodejs, bower, webstorm ide, chrome.
