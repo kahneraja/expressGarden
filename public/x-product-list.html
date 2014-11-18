@@ -50,16 +50,16 @@
             },
             productsChanged: function(){
               var index = 0;
-              if (this.$){
-                this.$.selector.selected = index;
-                this.selectedProduct = this.products[0];
-              }
+              this.selectProduct(index);
             },
             selectionSelect: function(e, detail) {
               var index = this.$.selector.selected;
+              this.selectProduct(index);
+            },
+            selectProduct: function(index){
               this.$.selector.selected = index;
               this.selectedProduct = this.products[index];
-            },
+            }
         });
     </script>
 </polymer-element>
