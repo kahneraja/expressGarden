@@ -1,29 +1,65 @@
+<link rel="import" href="bower_components/core-selector/core-selector.html">
 <link rel="import" href="x-product-data.html">
 <link rel="import" href="x-product-summary.html">
 <link rel="import" href="x-product.html">
 <script src="filter-money.js"></script>
 <!-- a simple example of a custom listing element. -->
 <polymer-element name="x-product-list">
+
     <template>
+          <style>
+            .column{
+              width: 400px;
+              display: inline-block;
+              vertical-align: top;
+            }
+            .column.selected > x-product{
+              background-color: lightgray;
+              padding: 10px;
+              font-size: 9px;
+              margin: 50px;
+            }
+          </style>
         <x-product-data
-                id="products"
-                products="{{products}}"></x-product-data>
-        <div layout vertical>
-            <h1>My products!</h1>
-            <x-product-summary products="{{products}}"></x-product-summary>
+          id="products"
+          products="{{products}}">
+        </x-product-data>
+
+        <div class="column">
+          <h1>My products!</h1>
+          <x-product-summary products="{{products}}"></x-product-summary>
+          <core-selector id="selector" selected="0" on-core-select="{{selectionSelect}}">
             <template repeat="{{product in products}}">
                 <x-product product="{{product}}" on-delete></x-product>
             </template>
+          </core-selector>
+        </div><div class="column selected">
+          <p>
+            Selected Product
+          </p>
+          <x-product product="{{selectedProduct}}" on-delete></x-product>
         </div>
     </template>
     <script>
         Polymer({
             ready: function() {
-                this.addEventListener('delete-product', this.deleteProduct);
+              this.addEventListener('delete-product', this.deleteProduct);
             },
             deleteProduct: function(event) {
                 this.$.products.deleteProduct(event.detail.id);
-            }
+            },
+            productsChanged: function(){
+              var index = 0;
+              if (this.$){
+                this.$.selector.selected = index;
+                this.selectedProduct = this.products[0];
+              }
+            },
+            selectionSelect: function(e, detail) {
+              var index = this.$.selector.selected;
+              this.$.selector.selected = index;
+              this.selectedProduct = this.products[index];
+            },
         });
     </script>
 </polymer-element>
